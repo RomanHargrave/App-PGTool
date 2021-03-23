@@ -1,0 +1,22 @@
+#!/usr/bin/env raku
+
+use App::PGTool::PGTree;
+use App::PGTool::PGMGrammar;
+use App::PGTool::PGMTreeBuilder;
+
+multi sub MAIN(
+   'map2pgt',
+   Str  $in-file,
+   Str  $out-file = '/dev/stdout',
+   Bool :$reverse? = False #= Rename to LHS instead of RHS
+) {
+   my $tree = App::PGTool::PGMGrammar.parsefile($in-file, :actions(PGMTreeBuilder.new)).made;
+
+   my $rep = do if $reverse {
+      $tree.tree-rep: :rhs;
+   } else {
+      $tree.tree-rep: :lhs;
+   };
+
+   say $rep;
+}

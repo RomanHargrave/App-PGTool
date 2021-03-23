@@ -1,0 +1,6 @@
+use Test;
+use App::PGTool;
+
+pass "replace me";
+
+done-testing;

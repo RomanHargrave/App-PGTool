@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "Roman Hargrave"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "blah blah blah",
+  "license": "Artistic-2.0",
+  "name": "App::PGTool",
+  "perl": "6.d",
+  "provides": {
+    "App::PGTool": "lib/App/PGTool.rakumod",
+    "App::PGTool::PGMGrammar": "lib/App/PGTool/PGMGrammar.rakumod",
+    "App::PGTool::PGMTreeBuilder": "lib/App/PGTool/PGMTreeBuilder.rakumod",
+    "App::PGTool::PGTGrammar": "lib/App/PGTool/PGTGrammar.rakumod",
+    "App::PGTool::PGTree": "lib/App/PGTool/PGTree.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.0.1"
+}
