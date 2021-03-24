@@ -6,7 +6,7 @@
   ],
   "depends": [
   ],
-  "description": "blah blah blah",
+  "description": "Work with ProGuard Map Data",
   "license": "Artistic-2.0",
   "name": "App::PGTool",
   "perl": "6.d",
@@ -29,5 +29,5 @@
   ],
   "test-depends": [
   ],
-  "version": "0.0.1"
+  "version": "0.0.2"
 }

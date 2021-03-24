@@ -1,19 +1,19 @@
+[![Actions Status](https://github.com/RomanHargrave/App-PGTool/workflows/test/badge.svg)](https://github.com/RomanHargrave/App-PGTool/actions)
+
 NAME
 ====
 
-App::PGTool - blah blah blah
+App::PGTool - Work with ProGuard Map Data
 
 SYNOPSIS
 ========
 
-```raku
-use App::PGTool;
-```
+Run pgtool
 
 DESCRIPTION
 ===========
 
-App::PGTool is ...
+App::PGTool is a suite of code and tools for working with ProGuard map data. Often it might prove helpful to be able to edit and transform these maps.
 
 AUTHOR
 ======
