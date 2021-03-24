@@ -14,7 +14,7 @@ multi dst(LHS) is export(:API) is pure { LHS }
 multi dst(RHS) is export(:API) is pure { RHS }
 
 class Node is export(:API) {
-   has Node $.parent;
+   has Node $.parent is rw;
 
    #| Class data, if this node is a class
    has ClassTag $.class is rw;

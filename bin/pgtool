@@ -51,12 +51,12 @@ multi sub MAIN(
    Str $out-file = '-',  #= Where to send the output
    Bool :$reverse = False        #= Rename to LHS instead of RHS
 ) {
-   my $tree = App::PGTool::PGTGrammar.parsefile($in-file, :actions(PGTTreeBuilder.new));
-   #my $printer = PGMPrinter.new: :io($out-file.IO.open: :w);
+   my $tree = App::PGTool::PGTGrammar.parsefile($in-file, :actions(PGTTreeBuilder.new)).made;
+   my $printer = PGMPrinter.new: :io($out-file.IO.open: :w);
    #dd $tree;
-   #if $reverse {
-   #   $printer.print: $tree.lhs;
-   #} else {
-   #   $printer.print: $tree.rhs;
-   #}
+   if $reverse {
+      $printer.print: $tree.lhs;
+   } else {
+      $printer.print: $tree.rhs;
+   }
 }

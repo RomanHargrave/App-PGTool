@@ -1,3 +1,4 @@
+# -*- mode: conf; -*-
 package pkg {
   class cls from a.b {
     class child from a.b$c {

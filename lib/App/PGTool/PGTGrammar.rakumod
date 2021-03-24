@@ -1,4 +1,4 @@
-use Grammar::Tracer;
+# use Grammar::Tracer;
 #| Grammar that describes the structured tree (PGT) format
 #| Grammar for an alternative ProGuard map
 #| syntax that is nested, allowing for easy editing
@@ -6,7 +6,8 @@ unit grammar App::PGTool::PGTGrammar is export;
 
 #| Basic JVM Name
 token name { <[a..zA..Z_0..9$<>.-]>+ }
-regex comment { '#' <[\w\ ]>* [\v | $] }
+token lb { <[\c[LF] \r \r\c[LF]]> }
+token comment { '#' <-lb>* }
 
 token array-flag { '[]' }
 
@@ -39,7 +40,7 @@ rule class-block {
 }
 
 rule package-block {
-   'package' <name> '{'
+   'package' <name-rhs=.name> '{'
    [
       | <package-block>
       | <class-block>
