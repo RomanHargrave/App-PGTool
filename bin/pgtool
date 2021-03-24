@@ -3,20 +3,21 @@
 use App::PGTool::PGTree;
 use App::PGTool::PGMGrammar;
 use App::PGTool::PGMTreeBuilder;
+use App::PGTool::PGTPrinter;
 
+#| Convert a ProGuard Map to a ProGuard Tree
 multi sub MAIN(
    'map2pgt',
-   Str  $in-file,
-   Str  $out-file = '/dev/stdout',
-   Bool :$reverse? = False #= Rename to LHS instead of RHS
+   Str $in-file where *.IO.f,     #= Input map file
+   Str $out-file = '-',  #= Where to send the output
+   Bool :$reverse = False        #= Rename to LHS instead of RHS
 ) {
    my $tree = App::PGTool::PGMGrammar.parsefile($in-file, :actions(PGMTreeBuilder.new)).made;
+   my $printer = PGTPrinter.new: :io($out-file.IO.open: :w);
 
-   my $rep = do if $reverse {
-      $tree.tree-rep: :rhs;
+   if $reverse {
+      $printer.print: $tree.lhs;
    } else {
-      $tree.tree-rep: :lhs;
-   };
-
-   say $rep;
+      $printer.print: $tree.rhs;
+   }
 }
