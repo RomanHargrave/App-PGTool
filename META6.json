@@ -13,6 +13,7 @@
   "provides": {
     "App::PGTool": "lib/App/PGTool.rakumod",
     "App::PGTool::PGMGrammar": "lib/App/PGTool/PGMGrammar.rakumod",
+    "App::PGTool::PGMPrinter": "lib/App/PGTool/PGMPrinter.rakumod",
     "App::PGTool::PGMTreeBuilder": "lib/App/PGTool/PGMTreeBuilder.rakumod",
     "App::PGTool::PGTGrammar": "lib/App/PGTool/PGTGrammar.rakumod",
     "App::PGTool::PGTPrinter": "lib/App/PGTool/PGTPrinter.rakumod",

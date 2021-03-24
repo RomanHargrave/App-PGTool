@@ -4,6 +4,7 @@ use App::PGTool::PGTree;
 use App::PGTool::PGMGrammar;
 use App::PGTool::PGMTreeBuilder;
 use App::PGTool::PGTPrinter;
+use App::PGTool::PGMPrinter;
 
 #| Convert a ProGuard Map to a ProGuard Tree
 multi sub MAIN(
@@ -14,6 +15,23 @@ multi sub MAIN(
 ) {
    my $tree = App::PGTool::PGMGrammar.parsefile($in-file, :actions(PGMTreeBuilder.new)).made;
    my $printer = PGTPrinter.new: :io($out-file.IO.open: :w);
+
+   if $reverse {
+      $printer.print: $tree.lhs;
+   } else {
+      $printer.print: $tree.rhs;
+   }
+}
+
+#| Convert a ProGuard Map to a ProGuard Tree
+multi sub MAIN(
+   'map2map',
+   Str $in-file where *.IO.f,     #= Input map file
+   Str $out-file = '-',  #= Where to send the output
+   Bool :$reverse = False        #= Rename to LHS instead of RHS
+) {
+   my $tree = App::PGTool::PGMGrammar.parsefile($in-file, :actions(PGMTreeBuilder.new)).made;
+   my $printer = PGMPrinter.new: :io($out-file.IO.open: :w);
 
    if $reverse {
       $printer.print: $tree.lhs;
