@@ -20,7 +20,7 @@ multi method print(::?CLASS $_: Node $dst, ClassTag:U, |p(:$depth = -1, :$side, 
 
    unless $dst.root {
       $.io.print: $ws, '}';
-      $.io.print: ' # package ', $dst.name if @children;
+      $.io.print: ' // package ', $dst.name if @children;
    }
 }
 
@@ -46,5 +46,5 @@ multi method print(::?CLASS $_: Node $dst, ClassTag:D $c, |p(:$depth = 0, :$side
    }
 
    $.io.print: $ws, '}';
-   $.io.print: ' # class ', $src.name if $has-body;
+   $.io.print: ' // class ', $src.name if $has-body;
 }
