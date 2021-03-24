@@ -15,7 +15,7 @@ method type($/) {
    # Types in the PGM format always refer to names from the LHS tree
    # This allows use to eagerly create the tag for this type
    make Type.new(
-      :dimensions(+$<array-flag>),
+      :dimension(+$<array-flag>),
       :class($.tree.lhs.declare(|decompose-name($<name>.Str)<package class>, :implicit).class)
    )
 }
