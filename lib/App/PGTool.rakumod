@@ -1,23 +1,20 @@
-unit class App::PGTool:ver<0.0.1>;
+unit class App::PGTool:ver<0.0.2>;
 
 
 =begin pod
 
 =head1 NAME
 
-App::PGTool - blah blah blah
+App::PGTool - Work with ProGuard Map Data
 
 =head1 SYNOPSIS
 
-=begin code :lang<raku>
-
-use App::PGTool;
-
-=end code
+Run pgtool
 
 =head1 DESCRIPTION
 
-App::PGTool is ...
+App::PGTool is a suite of code and tools for working with ProGuard map data.
+Often it might prove helpful to be able to edit and transform these maps.
 
 =head1 AUTHOR
 
