@@ -15,11 +15,13 @@
     "App::PGTool::PGMGrammar": "lib/App/PGTool/PGMGrammar.rakumod",
     "App::PGTool::PGMTreeBuilder": "lib/App/PGTool/PGMTreeBuilder.rakumod",
     "App::PGTool::PGTGrammar": "lib/App/PGTool/PGTGrammar.rakumod",
-    "App::PGTool::PGTree": "lib/App/PGTool/PGTree.rakumod"
+    "App::PGTool::PGTPrinter": "lib/App/PGTool/PGTPrinter.rakumod",
+    "App::PGTool::PGTree": "lib/App/PGTool/PGTree.rakumod",
+    "App::PGTool::PGTreePrinter": "lib/App/PGTool/PGTreePrinter.rakumod"
   },
   "resources": [
   ],
-  "source-url": "",
+  "source-url": "https://github.com/RomanHargrave/App-PGTool.git",
   "tags": [
   ],
   "test-depends": [
