@@ -27,6 +27,8 @@ multi method print(Node, ClassTag:U, |) { ... }
 
 #| Print a node, either with or without a class
 multi method print(Node $n, |p(TreeSide :$side?, *%)) {
+   die "Bad tree printer state: walking {$n.side} node with tagged side $side" unless $n.side ~~ $side;
+
    self.print($n, $n.class, |p, :side($n.side)) if $n.explicit
 }
 
