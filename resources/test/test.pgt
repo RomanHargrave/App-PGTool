@@ -1,0 +1,29 @@
+package pkg {
+  class cls from a.b {
+    class child from a.b$c {
+      class grandchild from a.b$c$d {
+        a.b$c i -> member
+      } # class d
+      a.b$c$d i -> member
+    } # class c
+  } # class b
+} # package pkg
+package com {
+  package jworks {
+    class whatever from h.k {
+      void K(h.f,int,int) -> a
+      int[] L() -> p
+      byte[][] M() -> q
+      byte[] N() -> r
+      java.lang.String a() -> f
+      boolean equals(java.lang.Object) -> b
+      int hashCode() -> g
+      h.i i(java.lang.String) -> c
+      java.lang.String toString() -> j
+      int u() -> k
+      java.lang.String w() -> m
+      byte[] x() -> n
+      byte y(int) -> c
+    } # class k
+  } # package jworks
+} # package com

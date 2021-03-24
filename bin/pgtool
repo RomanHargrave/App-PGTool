@@ -1,10 +1,14 @@
 #!/usr/bin/env raku
 
 use App::PGTool::PGTree;
+
 use App::PGTool::PGMGrammar;
 use App::PGTool::PGMTreeBuilder;
-use App::PGTool::PGTPrinter;
 use App::PGTool::PGMPrinter;
+
+use App::PGTool::PGTGrammar;
+use App::PGTool::PGTTreeBuilder;
+use App::PGTool::PGTPrinter;
 
 #| Convert a ProGuard Map to a ProGuard Tree
 multi sub MAIN(
@@ -23,7 +27,7 @@ multi sub MAIN(
    }
 }
 
-#| Convert a ProGuard Map to a ProGuard Tree
+#| Convert a ProGuard Map to a ProGuard Map
 multi sub MAIN(
    'map2map',
    Str $in-file where *.IO.f,     #= Input map file
@@ -38,4 +42,21 @@ multi sub MAIN(
    } else {
       $printer.print: $tree.rhs;
    }
+}
+
+#| Convert a ProGuard Tree to a ProGuard Map
+multi sub MAIN(
+   'pgt2map',
+   Str $in-file where *.IO.f,     #= Input map file
+   Str $out-file = '-',  #= Where to send the output
+   Bool :$reverse = False        #= Rename to LHS instead of RHS
+) {
+   my $tree = App::PGTool::PGTGrammar.parsefile($in-file, :actions(PGTTreeBuilder.new));
+   #my $printer = PGMPrinter.new: :io($out-file.IO.open: :w);
+   #dd $tree;
+   #if $reverse {
+   #   $printer.print: $tree.lhs;
+   #} else {
+   #   $printer.print: $tree.rhs;
+   #}
 }

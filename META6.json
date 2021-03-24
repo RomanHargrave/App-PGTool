@@ -17,7 +17,9 @@
     "App::PGTool::PGMTreeBuilder": "lib/App/PGTool/PGMTreeBuilder.rakumod",
     "App::PGTool::PGTGrammar": "lib/App/PGTool/PGTGrammar.rakumod",
     "App::PGTool::PGTPrinter": "lib/App/PGTool/PGTPrinter.rakumod",
+    "App::PGTool::PGTTreeBuilder": "lib/App/PGTool/PGTTreeBuilder.rakumod",
     "App::PGTool::PGTree": "lib/App/PGTool/PGTree.rakumod",
+    "App::PGTool::PGTreeBuilder": "lib/App/PGTool/PGTreeBuilder.rakumod",
     "App::PGTool::PGTreePrinter": "lib/App/PGTool/PGTreePrinter.rakumod"
   },
   "resources": [
