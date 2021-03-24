@@ -7,7 +7,7 @@ unit grammar App::PGTool::PGTGrammar is export;
 #| Basic JVM Name
 token name { <[a..zA..Z_0..9$<>.-]>+ }
 token lb { <[\c[LF] \r \r\c[LF]]> }
-token comment { '#' <-lb>* }
+token comment { [ '#' | '//' ] <-lb>* }
 
 token array-flag { '[]' }
 
