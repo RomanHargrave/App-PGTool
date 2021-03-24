@@ -60,7 +60,6 @@ multi method print($_: Method $m, |p(TreeSide :$side!, |)) {
    $.io.print: .ws(|p);                           # Print whitespace leading up to the method declaration
    .print: $m.return-type, |p, :side(src $side);  # Print return type using src-side type
 
-
    $.io.print(
       ' ',                         
       $m.name(src $side),          # Print the source name
