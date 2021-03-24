@@ -1,11 +1,9 @@
-x.y.z -> a.b.c:
-      x.y.z[] gamma -> delta
-      x.y.z$gamma delta(x.y.z[][]) -> beta
-x.y.z$gamma -> a.b.c$d:
-      x.y.z d -> g
-x.y.z$beta -> a.b.c$a:
-      x.y.z d -> g
-com.jworks.***REMOVED*** -> h.k:
+a.b -> pkg.cls:
+a.b$c -> pkg.cls$child:
+    a.b$c$d i -> member
+a.b$c$d -> pkg.cls$child$grandchild:
+    a.b$c i -> member
+h.k -> com.jworks.whatever:
     void K(h.f,int,int) -> a
     int[] L() -> p
     byte[][] M() -> q
